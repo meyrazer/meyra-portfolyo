@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sole Kurumsal Kimlik | Meyra Özer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding: 100px;">
+
+  <a href="javascript:history.back()" style="color: #888; text-decoration: none;">← Geri Dön</a>
+    
+    <h1 style="font-family: 'Playfair Display', serif; margin: 40px 0; color: #fff;">Sole Moda Markası</h1>
+    
+    <div class="project-slider">
+        <img src="images/sole/sole-01.jpg" alt="Sole Kartvizit">
+        <img src="images/sole/sole-02.jpg" alt="Sole Çanta">
+        <img src="images/sole/sole-03.jpg" alt="Sole Tabela">
+        <img src="images/sole/sole-04.jpg" alt="Sole Etiket">
+        <img src="images/sole/sole-05.jpg" alt="Sole Kutu">
+    </div>
+    
+    <div style="max-width: 800px; line-height: 1.8; color: #ccc; margin-top: 40px;">
+        <p>Sole adlı kurgusal moda markası için hazırladığım kurumsal kimlik ve marka tasarımı projesi. Tasarımda, markanın isminden ilhamla güneş ve ay sembolizminin zarif birleşimi merkeze alınarak lüks ve zamansız bir estetik hedeflendi.</p>
+        <br>
+        <p>Premium hissiyatı güçlendirmek amacıyla mat siyah zeminler üzerinde ince hatlı bakır/altın varak detaylar kullanıldı. Kartvizitten mağaza tabelasına kadar tüm mock-up uygulamalarında markanın elit, sofistike ve detaylara önem veren vizyonu ön plana çıkarıldı.</p>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.project-slider');
+        slider.addEventListener('wheel', (evt) => {
+            if (Math.abs(evt.deltaX) > 0) return; 
+            evt.preventDefault();
+            if (evt.deltaY > 0) { slider.scrollLeft += 550; } 
+            else { slider.scrollLeft -= 550; }
+        });
+    </script>
+</body>
+</html>

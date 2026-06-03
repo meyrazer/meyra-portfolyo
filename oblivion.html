@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oblivion Ambalaj Tasarımı | Meyra Özer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding: 100px;">
+
+  <a href="javascript:history.back()" style="color: #888; text-decoration: none;">← Geri Dön</a>
+    
+    <h1 style="font-family: 'Playfair Display', serif; margin: 40px 0; color: #fff;">Oblivion: Kavramsal Ambalaj</h1>
+    
+    <div class="project-slider">
+        <img src="images/oblivion/oblivion-01.jpg" alt="Oblivion Kutu ve Kapsüller">
+        <img src="images/oblivion/oblivion-02.jpg" alt="Oblivion Kutu Açılımı (Dieline)">
+    </div>
+    
+    <div style="max-width: 800px; line-height: 1.8; color: #ccc; margin-top: 40px;">
+        <p>Oblivion (Anı Silici) adlı kavramsal medikal ürün için hazırladığım ambalaj ve kutu (dieline) tasarımı. Projenin temel çıkış noktası, zihnin derinliklerine ve unutma arzusuna hitap eden karanlık, mistik ve bilim kurgu unsurları barındıran bir estetik yaratmaktı.</p>
+        <br>
+        <p>Tasarımda kullanılan derin mor tonları ve kutu yüzeyindeki zarif dokular, ürüne hem lüks hem de tekinsiz bir hava katıyor. Minimalist ve net tipografi ise ürünün tıbbi ciddiyetini korurken, arka plandaki hafif yıldız tozunu andıran dokular kullanıcıya kozmik ve sürreal bir vaatte bulunuyor.</p>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.project-slider');
+        slider.addEventListener('wheel', (evt) => {
+            if (Math.abs(evt.deltaX) > 0) return; 
+            evt.preventDefault();
+            if (evt.deltaY > 0) { slider.scrollLeft += 550; } 
+            else { slider.scrollLeft -= 550; }
+        });
+    </script>
+</body>
+</html>

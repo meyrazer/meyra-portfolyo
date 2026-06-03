@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheetos Kampanyası | Meyra Özer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding: 100px;">
+
+   <a href="javascript:history.back()" style="color: #888; text-decoration: none;">← Geri Dön</a>
+    
+    <h1 style="font-family: 'Playfair Display', serif; margin: 40px 0; color: #fff;">Cheetos Konsept Kampanya</h1>
+    
+    <div class="project-slider">
+        <img src="images/cheetos/cheetos-01.jpg" alt="Cheetos Kampanya Görseli 1">
+        <img src="images/cheetos/cheetos-02.jpg" alt="Cheetos Kampanya Görseli 2">
+    </div>
+    
+    <div style="max-width: 800px; line-height: 1.8; color: #ccc; margin-top: 40px;">
+        <p>Cheetos markası için kurguladığım konsept reklam kampanyası ve ambalaj tasarımı. Projenin temel amacı, ikonik bir atıştırmalığı yepyeni bir forma, biftek ve soğan aromalı bir içeceğe dönüştürerek tüketici algısıyla eğlenceli bir şekilde oynamak ve dikkat çekici bir marka deneyimi yaratmaktı.</p>
+        <br>
+        <p>Görsel iletişim stratejisi olarak markanın enerjik turuncu ve mor renk paleti yüksek kontrastla uygulandı. Maskot Chester Cheetah, bu yenilikçi ve dinamik konsepti destekleyecek şekilde merkeze yerleştirilerek kampanyanın eğlenceli ruhu vurgulandı.</p>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.project-slider');
+        slider.addEventListener('wheel', (evt) => {
+            if (Math.abs(evt.deltaX) > 0) return; 
+            evt.preventDefault();
+            if (evt.deltaY > 0) { slider.scrollLeft += 550; } 
+            else { slider.scrollLeft -= 550; }
+        });
+    </script>
+</body>
+</html>

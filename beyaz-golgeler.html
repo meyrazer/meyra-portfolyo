@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyaz Gölgeler | Meyra Özer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding: 100px;">
+
+<a href="javascript:history.back()" style="color: #888; text-decoration: none;">← Geri Dön</a>
+    
+    <h1 style="font-family: 'Playfair Display', serif; margin: 40px 0; color: #fff;">Beyaz Gölgeler</h1>
+    
+    <div class="project-slider">
+        <!-- Klasördeki 3 görselin yolları -->
+        <img src="images/beyaz-golgeler/bg-01.jpg" alt="Beyaz Gölgeler 1">
+        <img src="images/beyaz-golgeler/bg-02.jpg" alt="Beyaz Gölgeler 2">
+        <img src="images/beyaz-golgeler/bg-03.jpg" alt="Beyaz Gölgeler 3">
+    </div>
+    
+    <div style="max-width: 800px; line-height: 1.8; color: #ccc; margin-top: 40px;">
+        <p>Beyaz Gölgeler adlı fantastik romanım için hazırladığım kapak tasarımı. Hikayenin merkezindeki zıtlıkları ve sırları yansıtmak amacıyla, karanlığın içinden parlayan ve etrafı altın rengi damarlarla sarılmış beyaz bir zambak odak noktası olarak belirlendi. Bu illüstrasyon, saflığın ve bilinmezliğin iç içe geçtiği o tekinsiz çizgiyi sembolize ediyor.</p>
+        <br>
+        <p>Genel kompozisyonda kullanılan derin antrasit tonlar, kapağa klasik ve mistik bir atmosfer kazandırırken merkezdeki figürü çarpıcı bir şekilde öne çıkarıyor. Kapak genelinde tercih edilen zarif, tırnaklı tipografi ise bu karanlık ve estetik yapıyı destekleyerek okuyucuya hikayenin gerilim dolu ruhunu hissettiriyor.</p>
+    </div>
+
+    <!-- Kusursuz Kaydırma Scripti -->
+    <script>
+        const slider = document.querySelector('.project-slider');
+        slider.addEventListener('wheel', (evt) => {
+            if (Math.abs(evt.deltaX) > 0) return; 
+            evt.preventDefault();
+            if (evt.deltaY > 0) { slider.scrollLeft += 550; } 
+            else { slider.scrollLeft -= 550; }
+        });
+    </script>
+</body>
+</html>

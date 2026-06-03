@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivy Ambalaj Tasarımı | Meyra Özer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding: 100px;">
+
+<a href="javascript:history.back()" style="color: #888; text-decoration: none;">← Geri Dön</a>
+    
+    <h1 style="font-family: 'Playfair Display', serif; margin: 40px 0; color: #fff;">Vivy Meyve Suyu Ambalajı</h1>
+    
+    <div class="project-slider">
+        <!-- Klasördeki görsellerin yolları -->
+        <img src="images/vivy/vivy-01.jpg" alt="Vivy Şişe Mockup">
+        <img src="images/vivy/vivy-02.jpg" alt="Vivy Etiket Tasarımı">
+    </div>
+    
+    <div style="max-width: 800px; line-height: 1.8; color: #ccc; margin-top: 40px;">
+        <p>Vivy adlı meyve suyu markası için hazırladığım ambalaj ve etiket tasarımı. Tasarımın odağında, mango ve çilek lezzetlerinin verdiği tazeleyici ve dinamik hissi yansıtmak yer alıyordu.</p>
+        <br>
+        <p>Bunu sağlamak için cesur, kalın ve eğlenceli bir tipografi tercih edildi. Şeftali ve pembe tonlarının hakim olduğu renk paleti, doğrudan ürünün doğal içeriğine gönderme yaparken, gerçekçi meyve illüstrasyonları tasarımı daha iştah açıcı ve samimi bir hale getirdi.</p>
+    </div>
+
+    <!-- Kusursuz Kaydırma Scripti -->
+    <script>
+        const slider = document.querySelector('.project-slider');
+        slider.addEventListener('wheel', (evt) => {
+            if (Math.abs(evt.deltaX) > 0) return; 
+            evt.preventDefault();
+            if (evt.deltaY > 0) { slider.scrollLeft += 550; } 
+            else { slider.scrollLeft -= 550; }
+        });
+    </script>
+</body>
+</html>

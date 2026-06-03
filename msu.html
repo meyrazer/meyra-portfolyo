@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje Detayı | Meyra Özer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding: 100px;">
+
+   <a href="javascript:history.back()" style="color: #888; text-decoration: none;">← Geri Dön</a>
+    
+    <h1 style="font-family: 'Playfair Display', serif; margin: 40px 0; color: #fff;">Mavinin Son Uykusu</h1>
+    
+    <div class="project-slider">
+        <img src="images/msu/msu-01.jpg" alt="Detay 1">
+        <img src="images/msu/msu-02.jpg" alt="Detay 2">
+        <img src="images/msu/msu-03.jpg" alt="Detay 3">
+        <img src="images/msu/msu-04.jpg" alt="Detay 4">
+    </div>
+    
+    <div style="max-width: 800px; line-height: 1.8; color: #ccc; margin-top: 40px;">
+        <p>Mavinin Son Uykusu adlı fantastik ve gizem türündeki romanım için hazırladığım kitap kapağı tasarımı. Kitabın merkezinde yer alan telekinezi, zihinsel güçler ve çözülmeyi bekleyen sırlar gibi temaları görselleştirmek için, ön kapakta nöral ağları ve elektrik akımlarını andıran parlak mavi bir enerji patlaması odak noktası olarak kullanıldı.</p>
+        <br>
+        <p>Genel kompozisyonda derin ve sisli bir atmosfer hakim. Bu koyu renk paleti, merkezdeki neon mavinin yüksek kontrastla öne çıkmasını sağlıyor. Başlıkta tercih edilen zarif ve tırnaklı tipografi hikayenin mistik tonunu desteklerken, iç kulakçıklara yerleştirilen ay evreleri tasarıma fantastik bir derinlik ve ritim katıyor.</p>
+    </div>
+<script>
+    const slider = document.querySelector('.project-slider');
+
+    slider.addEventListener('wheel', (evt) => {
+        // Eğer touchpad ile yatayda (sağa-sola) kaydırılıyorsa, koda hiç dokunma bırak kendi aksın!
+        if (Math.abs(evt.deltaX) > 0) {
+            return; 
+        }
+        
+        // Eğer sadece mouse tekerleğiyle yukarı-aşağı yapılıyorsa, bunu sağa-sola çevir
+        evt.preventDefault();
+        if (evt.deltaY > 0) {
+            slider.scrollLeft += 550;
+        } else {
+            slider.scrollLeft -= 550;
+        }
+    });
+</script>
+</body>
+</html>
