@@ -5,12 +5,33 @@
     box-sizing: border-box;
 }
 
+/* TÜM SAYFANIN PREMIUM SCROLLBAR TASARIMI */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    border: 2px solid #050505;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 182, 193, 0.4); /* Toz pembe temaya uyumlu loş hover */
+}
+
 body {
     background-color: #080808; 
     color: #e0e0e0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Yepyeni Montserrat fontumuz */
     overflow-x: hidden;
     scroll-behavior: smooth;
+    isolation: isolate; /* Işıkları duvarın arkasından öne çıkaran sihirli kod */
 }
 
 /* ------------------- */
@@ -48,20 +69,28 @@ body {
     z-index: 2;
 }
 
+/* HERO İÇERİK KABI */
 .hero-content {
     position: relative;
     z-index: 3;
     text-align: center;
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.25)); /* Güvenli parlama alanı */
 }
 
+/* GÜNCELLENEN GRAFİKSEL H1 BAŞLIĞI */
 .hero-content h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif; /* Başlığın o asil tırnaklı kontrastı korunuyor */
     font-size: 95px;
     font-weight: 400;
     letter-spacing: 14px;
-    color: #ffffff;
     margin-bottom: 15px;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    line-height: 1.2;
+    
+    /* Beyazdan parlak gümüş griye keskin degrade */
+    background: linear-gradient(180deg, #ffffff 30%, #cccccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-content p {
@@ -126,14 +155,16 @@ main {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     font-weight: 400;
-    color: #fff;
     letter-spacing: 2px;
+    background: linear-gradient(180deg, #ffffff 50%, #b0b0b0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .line {
     flex-grow: 1;
     height: 1px;
-    background: linear-gradient(90deg, #333, transparent);
+    background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(106, 27, 154, 0.2), transparent);
 }
 
 .gallery {
@@ -150,12 +181,6 @@ main {
     overflow: hidden;
     cursor: pointer;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
 .card-img-placeholder {
@@ -227,12 +252,10 @@ footer p {
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
     padding: 20px 0;
-    /* scrollbar-width: none; BURADAN SİLİNMİŞ OLMALI */
 }
 
-/* İnce ve Premium Scrollbar Tasarımı */
 .project-slider::-webkit-scrollbar {
-    height: 6px; /* Rahat görünsün diye 3px'den 6px'e çıkardık */
+    height: 6px; 
 }
 
 .project-slider::-webkit-scrollbar-track {
@@ -245,15 +268,15 @@ footer p {
     border-radius: 10px;
 }
 
-.project-slider::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
-}.project-slider img {
+.project-slider img {
     height: 500px;
     object-fit: contain;
     scroll-snap-align: center;
     border-radius: 4px;
     transition: transform 0.3s ease;
-}.card-img-real {
+}
+
+.card-img-real {
     width: 100%;
     height: 300px;
     object-fit: cover; 
@@ -264,9 +287,10 @@ footer p {
 .project-card:hover .card-img-real {
     transform: scale(1.05);
 }
+
 /* --- KUSURSUZ NAVBAR TASARIMI --- */
 .navbar {
-    position: fixed; /* Menüyü yukarıya sabitler, seninle aşağı kayar */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
@@ -274,12 +298,12 @@ footer p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10, 10, 10, 0.4); /* Şeffaf siyah arka plan */
-    backdrop-filter: blur(10px); /* Arkadaki yazıları buzlu cam gibi flulaştırır */
-    -webkit-backdrop-filter: blur(10px); /* Safari desteği */
-    z-index: 1000; /* Her zaman en üstte durmasını sağlar */
+    background: rgba(10, 10, 10, 0.4); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    z-index: 1000; 
     box-sizing: border-box;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Çok ince, zarif bir alt çizgi */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
 }
 
 .navbar .logo {
@@ -305,5 +329,114 @@ footer p {
 }
 
 .navbar .nav-links a:hover {
-    color: #fff; /* Üzerine gelince parlasın */
+    color: #fff; 
+}
+
+/* EKRAN KÜÇÜLDÜĞÜNDE DEVREYE GİRECEK KODLAR */
+@media (max-width: 768px) {
+    nav, .navbar, header {
+        flex-direction: column !important;
+        gap: 15px;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+    
+    h2, h3 {
+        font-size: 1.8rem !important;
+    }
+    
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .container, section, main {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* =================================================== */
+/* SOFT TOZ PEMBE NEBULA IŞIKLARI (YENİ VE HIZLI)       */
+/* =================================================== */
+.ambient-blob {
+    position: fixed;
+    width: 850px;
+    height: 850px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1; 
+    filter: blur(150px);
+    mix-blend-mode: screen;
+    opacity: 0.22;
+    animation: floatNebula 12s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+    top: -25%;
+    left: -20%;
+    background: radial-gradient(circle, rgba(255, 182, 193, 0.6) 0%, rgba(244, 143, 177, 0.2) 50%, transparent 70%);
+    animation-duration: 9s;
+}
+
+.blob-2 {
+    top: 20%;
+    right: -20%;
+    background: radial-gradient(circle, rgba(224, 176, 255, 0.5) 0%, rgba(255, 192, 203, 0.15) 50%, transparent 70%);
+    animation-duration: 14s;
+    animation-delay: -3s;
+}
+
+.blob-3 {
+    bottom: -25%;
+    left: -15%;
+    background: radial-gradient(circle, rgba(219, 112, 147, 0.5) 0%, rgba(244, 143, 177, 0.1) 50%, transparent 70%);
+    animation-duration: 11s;
+}
+
+@keyframes floatNebula {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate(100px, 60px) scale(1.15) rotate(120deg); }
+    100% { transform: translate(-50px, 100px) scale(0.95) rotate(240deg); }
+}
+
+/* TOZ PEMBE PREMIUM HOVER EFEKTİ */
+.project-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(255, 182, 193, 0.4);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 40px rgba(255, 182, 193, 0.15);
+}
+
+/* =================================================== */
+/* KOZMİK GÖKYÜZÜ VE UÇUŞAN YILDIZLAR TASARIMI          */
+/* =================================================== */
+.star-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(138, 43, 226, 0.4);
+    animation: flyAndTwinkle linear infinite;
+}
+
+@keyframes flyAndTwinkle {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
 }
